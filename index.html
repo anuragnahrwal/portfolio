@@ -6,400 +6,319 @@
 <title>Anurag Nahrwal — Video Editor & Motion Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #0a0a08;
-    --bg2: #111110;
-    --bg3: #1a1a17;
-    --amber: #e8a030;
-    --amber-dim: #a06e18;
-    --amber-light: #f5c97a;
-    --white: #f0ede6;
-    --muted: #7a7870;
-    --border: rgba(232,160,48,0.15);
-    --font-display: 'Bebas Neue', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'DM Mono', monospace;
+    --bg:      #04080f;
+    --bg2:     #070d18;
+    --bg3:     #0d1625;
+    --cyan:    #00c2ff;
+    --cyan2:   #0087c8;
+    --cyan3:   #00e5ff;
+    --white:   #e8f4ff;
+    --muted:   #4d6580;
+    --muted2:  #8aabcc;
+    --border:  rgba(0,194,255,0.12);
+    --border2: rgba(0,194,255,0.22);
+    --fd: 'Bebas Neue', sans-serif;
+    --fb: 'DM Sans', sans-serif;
+    --fm: 'DM Mono', monospace;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--white);
-    font-family: var(--font-body);
+    font-family: var(--fb);
     font-weight: 300;
     line-height: 1.7;
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 2.5rem;
-    background: rgba(10,10,8,0.85);
-    backdrop-filter: blur(12px);
+    padding: 1.2rem 2.5rem;
+    background: rgba(4,8,15,0.9);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    letter-spacing: 0.08em;
-    color: var(--amber);
-    text-decoration: none;
+    font-family: var(--fd); font-size: 1.4rem;
+    letter-spacing: 0.1em; color: var(--cyan); text-decoration: none;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: var(--muted2); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover { color: var(--cyan); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 0 2.5rem 5rem;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(0,194,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+  }
+  .hero-glow {
+    position: absolute; top: 15%; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(0,194,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
   }
   .hero-bg-text {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -52%);
-    font-family: var(--font-display);
+    font-family: var(--fd);
     font-size: clamp(8rem, 22vw, 20rem);
     color: transparent;
-    -webkit-text-stroke: 1px rgba(232,160,48,0.07);
-    white-space: nowrap;
-    pointer-events: none;
-    letter-spacing: 0.04em;
+    -webkit-text-stroke: 1px rgba(0,194,255,0.05);
+    white-space: nowrap; pointer-events: none; letter-spacing: 0.04em;
   }
   .hero-tag {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--amber);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-family: var(--fm); font-size: 0.74rem;
+    color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase;
     margin-bottom: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
+    display: flex; align-items: center; gap: 0.75rem;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
   }
+  .hero-tag-line { width: 32px; height: 1px; background: var(--cyan2); }
   .hero-name {
-    font-family: var(--font-display);
+    font-family: var(--fd);
     font-size: clamp(4.5rem, 12vw, 11rem);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
+    line-height: 0.9; letter-spacing: 0.02em; color: var(--white);
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
   }
-  .hero-name span { color: var(--amber); }
+  .hero-name span { color: var(--cyan); }
   .hero-sub {
-    font-size: clamp(1rem, 2.2vw, 1.4rem);
-    color: var(--muted);
-    font-weight: 300;
-    margin-top: 1.5rem;
-    max-width: 500px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
+    font-size: clamp(1rem, 2vw, 1.3rem); color: var(--muted2);
+    font-weight: 300; margin-top: 1.5rem; max-width: 520px;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
   }
   .hero-cta {
     display: flex; gap: 1rem; margin-top: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
   }
   .btn-primary {
-    background: var(--amber);
-    color: #0a0a08;
-    padding: 0.75rem 2rem;
-    border: none;
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
+    background: var(--cyan); color: var(--bg);
+    padding: 0.8rem 2.2rem; border: none;
+    font-family: var(--fb); font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
     transition: background 0.2s, transform 0.15s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   }
-  .btn-primary:hover { background: var(--amber-light); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--cyan3); transform: translateY(-2px); }
   .btn-ghost {
-    background: transparent;
-    color: var(--white);
-    padding: 0.75rem 2rem;
-    border: 1px solid rgba(240,237,230,0.2);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: border-color 0.2s, transform 0.15s;
+    background: transparent; color: var(--cyan);
+    padding: 0.8rem 2.2rem; border: 1px solid var(--border2);
+    font-family: var(--fb); font-size: 0.82rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
   }
-  .btn-ghost:hover { border-color: var(--amber); transform: translateY(-2px); }
-
+  .btn-ghost:hover { border-color: var(--cyan); background: rgba(0,194,255,0.06); transform: translateY(-2px); }
   .hero-stats {
     position: absolute; right: 2.5rem; bottom: 5rem;
     display: flex; flex-direction: column; gap: 2rem; align-items: flex-end;
-    opacity: 0;
-    animation: fadeUp 0.8s 1s forwards;
+    opacity: 0; animation: fadeUp 0.8s 1s forwards;
   }
   .stat-num {
-    font-family: var(--font-display);
-    font-size: 2.8rem;
-    color: var(--amber);
-    line-height: 1;
-    letter-spacing: 0.04em;
+    font-family: var(--fd); font-size: 3rem;
+    color: var(--cyan); line-height: 1; letter-spacing: 0.04em;
   }
   .stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: right;
-    margin-top: 2px;
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); text-align: right; margin-top: 3px;
   }
 
-  /* ── TICKER ── */
+  /* TICKER */
   .ticker-wrap {
     overflow: hidden;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 0.9rem 0;
+    padding: 0.85rem 0;
     background: var(--bg2);
   }
   .ticker-track {
     display: flex; gap: 3rem;
-    animation: ticker 18s linear infinite;
-    white-space: nowrap;
-    width: max-content;
+    animation: ticker 20s linear infinite;
+    white-space: nowrap; width: max-content;
   }
   .ticker-item {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    letter-spacing: 0.14em;
-    color: var(--muted);
-    text-transform: uppercase;
+    font-family: var(--fd); font-size: 1rem;
+    letter-spacing: 0.16em; color: var(--muted2); text-transform: uppercase;
     display: flex; align-items: center; gap: 1rem;
   }
-  .ticker-dot { width: 5px; height: 5px; background: var(--amber); border-radius: 50%; }
+  .ticker-dot { width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; }
 
-  /* ── SECTION BASE ── */
+  /* SECTION BASE */
   section { padding: 6rem 2.5rem; }
   .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 1rem;
+    font-family: var(--fm); font-size: 0.7rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem;
     display: flex; align-items: center; gap: 0.75rem;
   }
   .section-label::after {
-    content: '';
-    display: block; width: 40px; height: 1px; background: var(--amber-dim);
+    content: ''; display: block; width: 40px; height: 1px; background: var(--cyan2);
   }
   .section-title {
-    font-family: var(--font-display);
+    font-family: var(--fd);
     font-size: clamp(2.8rem, 6vw, 5.5rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 3rem;
+    line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 3rem;
   }
 
-  /* ── PROJECTS ── */
+  /* PROJECTS */
   .projects { background: var(--bg2); }
   .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 1.5px;
+    gap: 2px;
     background: var(--border);
   }
-  .project-card {
-    background: var(--bg2);
-    overflow: hidden;
-    cursor: pointer;
+
+  /* click-to-play card */
+  .vid-card {
     position: relative;
     aspect-ratio: 16/9;
+    background: var(--bg3);
+    overflow: hidden;
+    cursor: pointer;
   }
-  .project-card img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease, filter 0.4s ease;
-    filter: brightness(0.75) saturate(0.8);
-  }
-  .project-card:hover img { transform: scale(1.04); filter: brightness(0.5) saturate(0.6); }
-  .project-overlay {
+  .vid-thumb {
     position: absolute; inset: 0;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(10,10,8,0.85) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.35s;
+    transition: transform 0.45s ease, filter 0.35s ease;
   }
-  .project-card:hover .project-overlay { opacity: 1; }
-  .play-btn {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 48px; height: 48px; border: 1.5px solid var(--amber);
+  .vid-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    filter: brightness(0.7) saturate(0.75);
+  }
+  .vid-card:hover .vid-thumb img { transform: scale(1.05); filter: brightness(0.45) saturate(0.5); }
+  .vid-play {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px; height: 56px;
+    border: 2px solid var(--cyan);
     display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0.7;
+    background: rgba(0,194,255,0.08);
   }
-  .project-card:hover .play-btn { opacity: 1; }
-  .play-icon {
+  .vid-card:hover .vid-play { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  .play-tri {
     width: 0; height: 0;
     border-style: solid;
-    border-width: 9px 0 9px 16px;
-    border-color: transparent transparent transparent var(--amber);
-    margin-left: 3px;
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent var(--cyan);
+    margin-left: 4px;
   }
-  .project-link-overlay {
+  .vid-card iframe {
     position: absolute; inset: 0;
-    z-index: 2;
+    width: 100%; height: 100%; border: none;
+    z-index: 10;
   }
+  .vid-card.playing .vid-thumb,
+  .vid-card.playing .vid-play { display: none; }
 
-  /* ── ABOUT ── */
+  /* ABOUT */
   .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
   }
-  .about-img-wrap {
-    position: relative;
-  }
+  .about-img-wrap { position: relative; }
   .about-img-wrap::before {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     inset: 16px -16px -16px 16px;
-    border: 1px solid var(--border);
-    z-index: 0;
+    border: 1px solid var(--border2); z-index: 0;
   }
   .about-img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    object-position: top;
-    display: block;
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover; object-position: top; display: block;
     position: relative; z-index: 1;
-    filter: saturate(0.7) brightness(0.9);
+    filter: saturate(0.6) brightness(0.85);
   }
-  .about-text p {
-    color: var(--muted);
-    font-size: 1.05rem;
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
-  }
-  .skills-list {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-top: 2rem;
-  }
+  .about-text p { color: var(--muted2); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.5rem; }
+  .skills-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
   .skill-tag {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--amber);
-    border: 1px solid var(--amber-dim);
-    padding: 0.35rem 0.85rem;
+    font-family: var(--fm); font-size: 0.7rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--cyan); border: 1px solid var(--border2); padding: 0.35rem 0.9rem;
+    transition: background 0.2s;
   }
+  .skill-tag:hover { background: rgba(0,194,255,0.08); }
 
-  /* ── CONTACT ── */
+  /* CONTACT */
   .contact { background: var(--bg2); }
   .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
   }
   .contact-email {
-    font-family: var(--font-display);
+    font-family: var(--fd);
     font-size: clamp(1.4rem, 3vw, 2.2rem);
-    color: var(--white);
-    letter-spacing: 0.03em;
-    text-decoration: none;
-    display: block;
+    color: var(--white); letter-spacing: 0.03em;
+    text-decoration: none; display: block;
     margin-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;
     transition: color 0.2s;
   }
-  .contact-email:hover { color: var(--amber); }
-  .social-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-email:hover { color: var(--cyan); }
+  .social-links { display: flex; flex-direction: column; gap: 0.5rem; }
   .social-link {
     display: flex; align-items: center; gap: 1rem;
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--muted2); text-decoration: none;
+    font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: color 0.2s; padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0,194,255,0.05);
   }
-  .social-link:hover { color: var(--amber); }
+  .social-link:hover { color: var(--cyan); }
   .social-arrow { margin-left: auto; opacity: 0; transition: opacity 0.2s; }
   .social-link:hover .social-arrow { opacity: 1; }
   .contact-tagline {
-    font-family: var(--font-display);
+    font-family: var(--fd);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    color: var(--white);
+    line-height: 1; letter-spacing: 0.02em; color: var(--white);
   }
-  .contact-tagline span { color: var(--amber); }
+  .contact-tagline span { color: var(--cyan); }
   .contact-sub {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin-top: 1.5rem;
-    max-width: 380px;
+    color: var(--muted2); font-size: 0.95rem; line-height: 1.8;
+    margin-top: 1.5rem; max-width: 380px;
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     padding: 2rem 2.5rem;
     border-top: 1px solid var(--border);
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 1rem;
   }
-  footer p {
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
+  footer p { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.08em; }
 
-  /* ── FILM GRAIN OVERLAY ── */
-  body::after {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: 0.45;
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  /* ── ANIMATIONS ── */
+  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
   @keyframes ticker {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { gap: 1.25rem; }
@@ -427,8 +346,10 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
   <div class="hero-bg-text">VISUAL</div>
-  <div class="hero-tag">Video Editor &amp; Motion Designer</div>
+  <div class="hero-tag"><span class="hero-tag-line"></span>Video Editor &amp; Motion Designer</div>
   <h1 class="hero-name">Anurag<br/><span>Nahrwal</span></h1>
   <p class="hero-sub">Turning raw footage into stories that move people — 1.5+ years cutting long-form content that converts.</p>
   <div class="hero-cta">
@@ -475,55 +396,44 @@
   </div>
   <div class="projects-grid">
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/wlnwtU8MiHY/sddefault.webp" alt="Project 1" loading="lazy"/>
-      <div class="project-overlay">
-        <div class="play-btn"><div class="play-icon"></div></div>
-      </div>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=wlnwtU8MiHY" target="_blank" rel="noopener" aria-label="Watch project 1"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="wlnwtU8MiHY">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="Project 1" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/PDurQNdkh2k/sddefault.webp" alt="Project 2" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=PDurQNdkh2k" target="_blank" rel="noopener" aria-label="Watch project 2"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="PDurQNdkh2k">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/PDurQNdkh2k/sddefault.jpg" alt="Project 2" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/tkeyRcCv_7k/sddefault.webp" alt="Project 3" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=tkeyRcCv_7k" target="_blank" rel="noopener" aria-label="Watch project 3"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="tkeyRcCv_7k">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/tkeyRcCv_7k/sddefault.jpg" alt="Project 3" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/vcbz70ue1do/sddefault.webp" alt="Project 4" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=vcbz70ue1do" target="_blank" rel="noopener" aria-label="Watch project 4"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="vcbz70ue1do">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="Project 4" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/vWwq5s-8CgM/sddefault.webp" alt="Project 5" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=vWwq5s-8CgM" target="_blank" rel="noopener" aria-label="Watch project 5"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="vWwq5s-8CgM">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Project 5" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/TqNjAQuygJA/sddefault.webp" alt="Project 6" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=TqNjAQuygJA" target="_blank" rel="noopener" aria-label="Watch project 6"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="TqNjAQuygJA">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Project 6" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/c1OyB0kq-MI/sddefault.webp" alt="Project 7" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=c1OyB0kq-MI" target="_blank" rel="noopener" aria-label="Watch project 7"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="c1OyB0kq-MI">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/c1OyB0kq-MI/sddefault.jpg" alt="Project 7" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
-    <div class="project-card">
-      <img src="https://i.ytimg.com/vi_webp/MSkTpN4hTrk/sddefault.webp" alt="Project 8" loading="lazy"/>
-      <a class="project-link-overlay" href="https://www.youtube.com/watch?v=MSkTpN4hTrk&t=88s" target="_blank" rel="noopener" aria-label="Watch project 8"></a>
-      <div class="play-btn"><div class="play-icon"></div></div>
+    <div class="vid-card" data-vid="MSkTpN4hTrk" data-start="88">
+      <div class="vid-thumb"><img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Project 8" loading="lazy"/></div>
+      <div class="vid-play"><div class="play-tri"></div></div>
     </div>
 
   </div>
@@ -565,7 +475,7 @@
     <div>
       <a href="mailto:editoranurag135@gmail.com" class="contact-email">editoranurag135@gmail.com</a>
       <div class="social-links">
-        <a href="https://www.youtube.com/@visuals.anurag" class="social-link" target="_blank" rel="noopener">
+        <a href="https://www.youtube.com/@Anurag_Nahrwal" class="social-link" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
           YouTube
           <span class="social-arrow">→</span>
@@ -588,8 +498,23 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2025 Anurag Nahrwal. All rights reserved.</p>
-  <p style="font-family:'DM Mono',monospace; font-size:0.7rem;">Video Editor & Motion Designer</p>
+  <p style="font-family:'DM Mono',monospace;font-size:0.7rem;">Video Editor & Motion Designer</p>
 </footer>
 
+<script>
+  document.querySelectorAll('.vid-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      if (card.classList.contains('playing')) return;
+      var vid = card.dataset.vid;
+      var start = card.dataset.start ? '&start=' + card.dataset.start : '';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1' + start;
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      card.appendChild(iframe);
+      card.classList.add('playing');
+    });
+  });
+</script>
 </body>
 </html>
