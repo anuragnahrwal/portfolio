@@ -23,19 +23,19 @@
    Layout: 61.8% / 38.2% column split
 ─────────────────────────────────── */
 :root {
-  --bg:     #0c0b09;
-  --bg2:    #111009;
-  --bg3:    #181610;
-  --bg4:    #201e16;
-  --gold:   #c8a45a;
-  --gold2:  #e8c97a;
-  --gold3:  #8a6e30;
-  --cream:  #f0ead6;
-  --text:   #e2ddd0;
-  --muted:  #6b6348;
-  --muted2: #a89d7e;
-  --border: rgba(200,164,90,0.14);
-  --border2:rgba(200,164,90,0.28);
+  --bg:     #091413;
+  --bg2:    #0d1a18;
+  --bg3:    #112019;
+  --bg4:    #172b23;
+  --gold:   #408A71;
+  --gold2:  #B0E4CC;
+  --gold3:  #285A48;
+  --cream:  #e0f5ec;
+  --text:   #c8e8da;
+  --muted:  #1e3d33;
+  --muted2: #5a9e82;
+  --border: rgba(64,138,113,0.18);
+  --border2:rgba(64,138,113,0.35);
   --r-sm:   12px;
   --r-md:   20px;
   --r-lg:   32px;
@@ -72,14 +72,14 @@ body {
 #cursor-ring {
   position: fixed; top: 0; left: 0; z-index: 99998;
   width: 36px; height: 36px;
-  border: 1.5px solid rgba(200,164,90,0.5);
+  border: 1.5px solid rgba(64,138,113,0.55);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%,-50%);
   transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s, border-radius 0.25s;
 }
 body.cursor-hover #cursor-dot { width: 12px; height: 12px; background: var(--gold2); }
-body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(200,164,90,0.8); }
+body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(64,138,113,0.85); }
 body.cursor-click #cursor-dot { transform: translate(-50%,-50%) scale(0.6); }
 
 /* ── SCROLL PROGRESS BAR ── */
@@ -97,7 +97,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: var(--s3) var(--s5);
-  background: rgba(12,11,9,0.88);
+  background: rgba(9,20,19,0.92);
   backdrop-filter: blur(24px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   transition: padding 0.3s;
@@ -149,12 +149,12 @@ nav.scrolled { padding: var(--s2) var(--s5); }
 }
 .hero-glow-1 {
   position: absolute; top: -10%; left: 5%; width: 50vw; height: 50vw;
-  background: radial-gradient(circle, rgba(200,164,90,0.055) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(64,138,113,0.07) 0%, transparent 70%);
   pointer-events: none; filter: blur(40px);
 }
 .hero-glow-2 {
   position: absolute; bottom: 0; right: 0; width: 35vw; height: 35vw;
-  background: radial-gradient(circle, rgba(200,164,90,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(64,138,113,0.05) 0%, transparent 70%);
   pointer-events: none; filter: blur(60px);
 }
 .hero-left { position: relative; z-index: 1; }
@@ -162,7 +162,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   display: inline-flex; align-items: center; gap: var(--s2);
   font-family: var(--fm); font-size: 0.7rem; letter-spacing: 0.24em;
   text-transform: uppercase; color: var(--gold);
-  background: rgba(200,164,90,0.08);
+  background: rgba(64,138,113,0.12);
   border: 1px solid var(--border);
   padding: var(--s1) var(--s3); border-radius: 999px;
   margin-bottom: var(--s4);
@@ -203,10 +203,10 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   letter-spacing: 0.06em; text-decoration: none; border-radius: var(--r-md);
   border: none; cursor: none;
   transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-  box-shadow: 0 4px 24px rgba(200,164,90,0.2);
+  box-shadow: 0 4px 24px rgba(64,138,113,0.22);
   display: inline-flex; align-items: center; gap: var(--s2);
 }
-.btn-gold:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(200,164,90,0.32); }
+.btn-gold:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(64,138,113,0.38); }
 .btn-ghost {
   background: transparent; color: var(--text);
   padding: var(--s3) var(--s5);
@@ -216,7 +216,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   transition: border-color 0.25s, background 0.25s, transform 0.2s;
   display: inline-flex; align-items: center; gap: var(--s2);
 }
-.btn-ghost:hover { border-color: var(--gold); background: rgba(200,164,90,0.06); transform: translateY(-3px); }
+.btn-ghost:hover { border-color: var(--gold); background: rgba(64,138,113,0.1); transform: translateY(-3px); }
 .hero-stats {
   display: flex; gap: var(--s5); margin-top: var(--s6);
   padding-top: var(--s4); border-top: 1px solid var(--border);
@@ -243,7 +243,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   content: '';
   position: absolute; inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(200,164,90,0.4), transparent 50%, rgba(200,164,90,0.15));
+  background: linear-gradient(135deg, rgba(64,138,113,0.45), transparent 50%, rgba(64,138,113,0.18));
   z-index: 1; pointer-events: none;
 }
 .hero-photo-inner {
@@ -258,7 +258,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
 .hero-photo-wrap:hover img { transform: scale(1.03); filter: saturate(0.9) brightness(0.95); }
 .hero-photo-badge {
   position: absolute; bottom: var(--s4); left: var(--s4);
-  background: rgba(12,11,9,0.85); backdrop-filter: blur(16px);
+  background: rgba(9,20,19,0.88); backdrop-filter: blur(16px);
   border: 1px solid var(--border2);
   border-radius: var(--r-md);
   padding: var(--s3) var(--s4);
@@ -294,7 +294,7 @@ section { padding: var(--s7) var(--s5); }
 .section-label {
   display: inline-flex; align-items: center; gap: var(--s2);
   font-family: var(--fm); font-size: 0.618rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); background: rgba(200,164,90,0.08); border: 1px solid var(--border);
+  color: var(--gold); background: rgba(64,138,113,0.12); border: 1px solid var(--border);
   padding: var(--s1) var(--s3); border-radius: 999px; margin-bottom: var(--s4);
 }
 .section-title {
@@ -347,13 +347,13 @@ section { padding: var(--s7) var(--s5); }
 .vid-play-btn {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 56px; height: 56px;
-  background: rgba(200,164,90,0.15); backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(200,164,90,0.6);
+  background: rgba(64,138,113,0.18); backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(64,138,113,0.65);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.3s, transform 0.3s, border-color 0.3s;
 }
-.vid-card:hover .vid-play-btn { background: rgba(200,164,90,0.9); border-color: var(--gold); transform: translate(-50%,-50%) scale(1.1); }
+.vid-card:hover .vid-play-btn { background: rgba(64,138,113,0.95); border-color: var(--gold); transform: translate(-50%,-50%) scale(1.1); }
 .vid-card:hover .vid-play-btn .play-tri { border-color: transparent transparent transparent var(--bg); }
 .play-tri {
   width: 0; height: 0; border-style: solid;
@@ -365,7 +365,7 @@ section { padding: var(--s7) var(--s5); }
 /* ── LIGHTBOX MODAL ── */
 #lightbox {
   position: fixed; inset: 0; z-index: 9999;
-  background: rgba(4,3,2,0.92); backdrop-filter: blur(20px);
+  background: rgba(5,12,11,0.94); backdrop-filter: blur(20px);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none; transition: opacity 0.35s;
 }
@@ -406,7 +406,7 @@ section { padding: var(--s7) var(--s5); }
 .about-img-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.65) brightness(0.85); }
 .about-deco {
   position: absolute; bottom: var(--s4); right: var(--s4); z-index: 2;
-  background: rgba(12,11,9,0.85); backdrop-filter: blur(16px);
+  background: rgba(9,20,19,0.88); backdrop-filter: blur(16px);
   border: 1px solid var(--border2); border-radius: var(--r-md); padding: var(--s3) var(--s4);
 }
 .about-deco-num { font-family: var(--fd); font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; }
@@ -417,7 +417,7 @@ section { padding: var(--s7) var(--s5); }
 .tool-chip {
   font-family: var(--fm); font-size: 0.618rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--gold); border: 1px solid var(--border2); padding: var(--s1) var(--s3);
-  border-radius: var(--r-sm); background: rgba(200,164,90,0.05);
+  border-radius: var(--r-sm); background: rgba(64,138,113,0.08);
   transition: background 0.2s, color 0.2s;
 }
 .tool-chip:hover { background: var(--gold); color: var(--bg); }
@@ -486,7 +486,7 @@ section { padding: var(--s7) var(--s5); }
 }
 .cta-banner-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,164,90,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(64,138,113,0.07) 0%, transparent 70%);
 }
 .cta-banner-title {
   font-family: var(--fd); font-weight: 800;
@@ -525,7 +525,7 @@ section { padding: var(--s7) var(--s5); }
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){ .hero{grid-template-columns:1fr; padding-top:calc(var(--s7)*0.5);} .hero-right{display:none;} .footer-top{grid-template-columns:1fr 1fr;} }
-@media(max-width:768px){ nav{padding:var(--s2) var(--s3);} .nav-links li:not(:last-child){display:none;} section{padding:var(--s6) var(--s3);} .about-inner{grid-template-columns:1fr; gap:var(--s5);} .hero-stats{flex-wrap:wrap;gap:var(--s4);} .footer-top{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;align-items:flex-start;} .longform .carousel .vid-card{flex:0 0 85vw;} .shorts .carousel .vid-card{flex:0 0 48vw;} }
+@media(max-width:768px){ nav{padding:var(--s2) var(--s3);} .nav-links li:not(:last-child){display:none;} section{padding:var(--s6) var(--s3);} .about-inner{grid-template-columns:1fr; gap:var(--s5);} .hero-stats{flex-wrap:wrap;gap:var(--s4);} .footer-top{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;align-items:flex-start;} .longform-3col{grid-template-columns:1fr!important;} }
 @media(max-width:480px){ .shorts .carousel .vid-card{flex:0 0 70vw;} }
 </style>
 </head>
@@ -550,7 +550,7 @@ section { padding: var(--s7) var(--s5); }
     <li><a href="#longform" data-section="longform">Long Form</a></li>
     <li><a href="#about" data-section="about">About</a></li>
     <li><a href="#faq" data-section="faq">FAQ</a></li>
-    <li><a href="mailto:editoranurag135@gmail.com" class="nav-btn">Hire Me →</a></li>
+    <li><a href="#contact" class="nav-btn">Contact Me</a></li>
   </ul>
 </nav>
 
@@ -629,13 +629,13 @@ section { padding: var(--s7) var(--s5); }
   <div class="reveal"><div class="section-label"><span>●</span> Long Form Content</div></div>
   <div class="reveal reveal-delay-1"><h2 class="section-title">Long-Form Videos</h2></div>
   <div class="reveal reveal-delay-2"><p class="section-sub">Full-length storytelling built for retention — structure, pacing, and emotion from first frame to last.</p></div>
-  <div class="carousel-wrap reveal reveal-delay-3">
-    <div class="carousel" id="carousel-lf">
-      <div class="vid-card" data-vid="vWwq5s-8CgM" data-type="lf"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Long Form 1" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
-      <div class="vid-card" data-vid="TqNjAQuygJA" data-type="lf"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Long Form 2" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
-      <div class="vid-card" data-vid="c1OyB0kq-MI" data-type="lf"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/c1OyB0kq-MI/sddefault.jpg" alt="Long Form 3" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
-      <div class="vid-card" data-vid="MSkTpN4hTrk" data-start="88" data-type="lf"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Long Form 4" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
-    </div>
+  <div class="reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);">
+    <div class="vid-card" data-vid="vWwq5s-8CgM" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Long Form 1" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
+    <div class="vid-card" data-vid="TqNjAQuygJA" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Long Form 2" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
+    <div class="vid-card" data-vid="c1OyB0kq-MI" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/c1OyB0kq-MI/sddefault.jpg" alt="Long Form 3" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
+    <div class="vid-card" data-vid="MSkTpN4hTrk" data-start="88" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Long Form 4" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
+    <div class="vid-card" data-vid="wlnwtU8MiHY" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="Long Form 5" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
+    <div class="vid-card" data-vid="PDurQNdkh2k" data-type="lf" style="aspect-ratio:16/9;"><div class="vid-thumb"><img src="https://i.ytimg.com/vi/PDurQNdkh2k/sddefault.jpg" alt="Long Form 6" loading="lazy"/></div><div class="vid-overlay"></div><div class="vid-play-btn"><div class="play-tri"></div></div></div>
   </div>
 </section>
 
@@ -656,7 +656,7 @@ section { padding: var(--s7) var(--s5); }
         <p>I'm Anurag — a <em>video editor and motion designer</em> based in Delhi. 1.5+ years of turning raw footage into content that actually performs.</p>
         <p>My engineering background gives me a structured approach to every edit — I think about <em>pacing, retention, and psychology</em>. Why do viewers drop off? What makes them rewatch? I build edits around those answers.</p>
         <p>Whether it's a 30-second reel that stops the scroll or a 20-minute deep-dive that holds attention, <em>every frame earns its place</em>.</p>
-        <div style="margin-top:var(--s4);padding:var(--s3) var(--s4);background:rgba(200,164,90,0.07);border:1px solid var(--border2);border-radius:var(--r-md);display:flex;align-items:flex-start;gap:var(--s3);">
+        <div style="margin-top:var(--s4);padding:var(--s3) var(--s4);background:rgba(64,138,113,0.07);border:1px solid var(--border2);border-radius:var(--r-md);display:flex;align-items:flex-start;gap:var(--s3);">
           <span style="font-size:1.2rem;flex-shrink:0;margin-top:2px;">🏆</span>
           <p style="color:var(--muted2);font-size:0.9rem;line-height:1.618;margin:0;">I've also edited <em style="color:var(--cream);font-style:normal;">several short films</em> that went on to win <em style="color:var(--gold);font-style:normal;">1st place at multiple competitions</em> — bringing the same storytelling instincts I use for YouTube to narrative cinema.</p>
         </div>
