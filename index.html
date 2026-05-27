@@ -23,19 +23,19 @@
    Layout: 61.8% / 38.2% column split
 ─────────────────────────────────── */
 :root {
-  --bg:     #091413;
-  --bg2:    #0d1a18;
-  --bg3:    #112019;
-  --bg4:    #172b23;
-  --gold:   #408A71;
-  --gold2:  #B0E4CC;
-  --gold3:  #285A48;
-  --cream:  #e0f5ec;
-  --text:   #c8e8da;
-  --muted:  #1e3d33;
-  --muted2: #5a9e82;
-  --border: rgba(64,138,113,0.18);
-  --border2:rgba(64,138,113,0.35);
+  --bg:     #1E201E;
+  --bg2:    #232520;
+  --bg3:    #2a2c27;
+  --bg4:    #3C3D37;
+  --gold:   #697565;
+  --gold2:  #ECDFCC;
+  --gold3:  #3C3D37;
+  --cream:  #ECDFCC;
+  --text:   #d4cdc0;
+  --muted:  #4a4c46;
+  --muted2: #8a8a7e;
+  --border: rgba(105,117,101,0.18);
+  --border2:rgba(105,117,101,0.35);
   --r-sm:   12px;
   --r-md:   20px;
   --r-lg:   32px;
@@ -72,14 +72,14 @@ body {
 #cursor-ring {
   position: fixed; top: 0; left: 0; z-index: 99998;
   width: 36px; height: 36px;
-  border: 1.5px solid rgba(64,138,113,0.55);
+  border: 1.5px solid rgba(105,117,101,0.55);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%,-50%);
   transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s, border-radius 0.25s;
 }
 body.cursor-hover #cursor-dot { width: 12px; height: 12px; background: var(--gold2); }
-body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(64,138,113,0.85); }
+body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(105,117,101,0.85); }
 body.cursor-click #cursor-dot { transform: translate(-50%,-50%) scale(0.6); }
 
 /* ── SCROLL PROGRESS BAR ── */
@@ -97,7 +97,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: var(--s3) var(--s5);
-  background: rgba(9,20,19,0.92);
+  background: rgba(30,32,30,0.92);
   backdrop-filter: blur(24px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   transition: padding 0.3s;
@@ -149,7 +149,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
 }
 .hero-glow-1 {
   position: absolute; top: -10%; left: 5%; width: 50vw; height: 50vw;
-  background: radial-gradient(circle, rgba(64,138,113,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(105,117,101,0.07) 0%, transparent 70%);
   pointer-events: none; filter: blur(40px);
 }
 .hero-glow-2 {
@@ -162,7 +162,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   display: inline-flex; align-items: center; gap: var(--s2);
   font-family: var(--fm); font-size: 0.7rem; letter-spacing: 0.24em;
   text-transform: uppercase; color: var(--gold);
-  background: rgba(64,138,113,0.12);
+  background: rgba(105,117,101,0.12);
   border: 1px solid var(--border);
   padding: var(--s1) var(--s3); border-radius: 999px;
   margin-bottom: var(--s4);
@@ -193,7 +193,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   opacity: 0; animation: fadeUp 0.9s 0.55s cubic-bezier(.22,1,.36,1) forwards;
 }
 .hero-cta {
-  display: flex; gap: var(--s3); margin-top: var(--s5); flex-wrap: wrap;
+  display: flex; gap: var(--s3); margin-top: var(--s4); flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.9s 0.7s cubic-bezier(.22,1,.36,1) forwards;
 }
 .btn-gold {
@@ -203,10 +203,10 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   letter-spacing: 0.06em; text-decoration: none; border-radius: var(--r-md);
   border: none; cursor: none;
   transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-  box-shadow: 0 4px 24px rgba(64,138,113,0.22);
+  box-shadow: 0 4px 24px rgba(105,117,101,0.22);
   display: inline-flex; align-items: center; gap: var(--s2);
 }
-.btn-gold:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(64,138,113,0.38); }
+.btn-gold:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(105,117,101,0.38); }
 .btn-ghost {
   background: transparent; color: var(--text);
   padding: var(--s3) var(--s5);
@@ -216,10 +216,10 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   transition: border-color 0.25s, background 0.25s, transform 0.2s;
   display: inline-flex; align-items: center; gap: var(--s2);
 }
-.btn-ghost:hover { border-color: var(--gold); background: rgba(64,138,113,0.1); transform: translateY(-3px); }
+.btn-ghost:hover { border-color: var(--gold); background: rgba(105,117,101,0.1); transform: translateY(-3px); }
 .hero-stats {
-  display: flex; gap: var(--s5); margin-top: var(--s6);
-  padding-top: var(--s4); border-top: 1px solid var(--border);
+  display: flex; gap: var(--s5); margin-top: var(--s4);
+  padding-top: var(--s3); border-top: 1px solid var(--border);
   opacity: 0; animation: fadeUp 0.9s 0.85s cubic-bezier(.22,1,.36,1) forwards;
 }
 .stat-num {
@@ -243,12 +243,13 @@ nav.scrolled { padding: var(--s2) var(--s5); }
   content: '';
   position: absolute; inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(64,138,113,0.45), transparent 50%, rgba(64,138,113,0.18));
+  background: linear-gradient(135deg, rgba(105,117,101,0.45), transparent 50%, rgba(105,117,101,0.18));
   z-index: 1; pointer-events: none;
 }
 .hero-photo-inner {
   border-radius: inherit; overflow: hidden;
-  aspect-ratio: 0.786; /* 1/φ × something — roughly 4:5 portrait */
+  aspect-ratio: 3/4;
+  max-height: 72vh;
 }
 .hero-photo-inner img {
   width: 100%; height: 100%; object-fit: cover; object-position: top;
@@ -258,7 +259,7 @@ nav.scrolled { padding: var(--s2) var(--s5); }
 .hero-photo-wrap:hover img { transform: scale(1.03); filter: saturate(0.9) brightness(0.95); }
 .hero-photo-badge {
   position: absolute; bottom: var(--s4); left: var(--s4);
-  background: rgba(9,20,19,0.88); backdrop-filter: blur(16px);
+  background: rgba(30,32,30,0.88); backdrop-filter: blur(16px);
   border: 1px solid var(--border2);
   border-radius: var(--r-md);
   padding: var(--s3) var(--s4);
@@ -294,7 +295,7 @@ section { padding: var(--s7) var(--s5); }
 .section-label {
   display: inline-flex; align-items: center; gap: var(--s2);
   font-family: var(--fm); font-size: 0.618rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--gold); background: rgba(64,138,113,0.12); border: 1px solid var(--border);
+  color: var(--gold); background: rgba(105,117,101,0.12); border: 1px solid var(--border);
   padding: var(--s1) var(--s3); border-radius: 999px; margin-bottom: var(--s4);
 }
 .section-title {
@@ -342,18 +343,18 @@ section { padding: var(--s7) var(--s5); }
 .vid-card:hover .vid-thumb img { filter: brightness(0.45) saturate(0.5); }
 .vid-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(12,11,9,0.8) 0%, transparent 60%);
+  background: transparent;
 }
 .vid-play-btn {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 56px; height: 56px;
-  background: rgba(64,138,113,0.18); backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(64,138,113,0.65);
+  background: rgba(105,117,101,0.18); backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(105,117,101,0.65);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.3s, transform 0.3s, border-color 0.3s;
 }
-.vid-card:hover .vid-play-btn { background: rgba(64,138,113,0.95); border-color: var(--gold); transform: translate(-50%,-50%) scale(1.1); }
+.vid-card:hover .vid-play-btn { background: rgba(105,117,101,0.95); border-color: var(--gold); transform: translate(-50%,-50%) scale(1.1); }
 .vid-card:hover .vid-play-btn .play-tri { border-color: transparent transparent transparent var(--bg); }
 .play-tri {
   width: 0; height: 0; border-style: solid;
@@ -365,7 +366,7 @@ section { padding: var(--s7) var(--s5); }
 /* ── LIGHTBOX MODAL ── */
 #lightbox {
   position: fixed; inset: 0; z-index: 9999;
-  background: rgba(5,12,11,0.94); backdrop-filter: blur(20px);
+  background: rgba(15,16,15,0.96); backdrop-filter: blur(20px);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none; transition: opacity 0.35s;
 }
@@ -406,7 +407,7 @@ section { padding: var(--s7) var(--s5); }
 .about-img-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: saturate(0.65) brightness(0.85); }
 .about-deco {
   position: absolute; bottom: var(--s4); right: var(--s4); z-index: 2;
-  background: rgba(9,20,19,0.88); backdrop-filter: blur(16px);
+  background: rgba(30,32,30,0.88); backdrop-filter: blur(16px);
   border: 1px solid var(--border2); border-radius: var(--r-md); padding: var(--s3) var(--s4);
 }
 .about-deco-num { font-family: var(--fd); font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; }
@@ -417,7 +418,7 @@ section { padding: var(--s7) var(--s5); }
 .tool-chip {
   font-family: var(--fm); font-size: 0.618rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--gold); border: 1px solid var(--border2); padding: var(--s1) var(--s3);
-  border-radius: var(--r-sm); background: rgba(64,138,113,0.08);
+  border-radius: var(--r-sm); background: rgba(105,117,101,0.08);
   transition: background 0.2s, color 0.2s;
 }
 .tool-chip:hover { background: var(--gold); color: var(--bg); }
@@ -486,7 +487,7 @@ section { padding: var(--s7) var(--s5); }
 }
 .cta-banner-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(64,138,113,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(105,117,101,0.07) 0%, transparent 70%);
 }
 .cta-banner-title {
   font-family: var(--fd); font-weight: 800;
@@ -570,7 +571,7 @@ section { padding: var(--s7) var(--s5); }
     <p class="hero-desc">I don't just cut videos — I craft experiences. Long-form narratives and short-form punches that make people stop, feel something, and come back.</p>
     <div class="hero-cta">
       <a href="#longform" class="btn-gold">View My Work <span>↓</span></a>
-      <a href="mailto:editoranurag135@gmail.com" class="btn-ghost">Let's Collaborate →</a>
+      <a href="mailto:editoranurag135@gmail.com" class="btn-ghost">Contact Me →</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -656,7 +657,7 @@ section { padding: var(--s7) var(--s5); }
         <p>I'm Anurag — a <em>video editor and motion designer</em> based in Delhi. 1.5+ years of turning raw footage into content that actually performs.</p>
         <p>My engineering background gives me a structured approach to every edit — I think about <em>pacing, retention, and psychology</em>. Why do viewers drop off? What makes them rewatch? I build edits around those answers.</p>
         <p>Whether it's a 30-second reel that stops the scroll or a 20-minute deep-dive that holds attention, <em>every frame earns its place</em>.</p>
-        <div style="margin-top:var(--s4);padding:var(--s3) var(--s4);background:rgba(64,138,113,0.07);border:1px solid var(--border2);border-radius:var(--r-md);display:flex;align-items:flex-start;gap:var(--s3);">
+        <div style="margin-top:var(--s4);padding:var(--s3) var(--s4);background:rgba(105,117,101,0.07);border:1px solid var(--border2);border-radius:var(--r-md);display:flex;align-items:flex-start;gap:var(--s3);">
           <span style="font-size:1.2rem;flex-shrink:0;margin-top:2px;">🏆</span>
           <p style="color:var(--muted2);font-size:0.9rem;line-height:1.618;margin:0;">I've also edited <em style="color:var(--cream);font-style:normal;">several short films</em> that went on to win <em style="color:var(--gold);font-style:normal;">1st place at multiple competitions</em> — bringing the same storytelling instincts I use for YouTube to narrative cinema.</p>
         </div>
