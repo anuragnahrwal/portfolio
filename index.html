@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anurag Nahrwal — Video Editor & Motion Designer</title>
-  <meta name="description" content="Video editor and motion designer based in Delhi. Cinematic editing, motion graphics, storytelling." />
+  <meta name="description" content="Video editor and motion designer based in Delhi." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,16 +18,16 @@
       <a href="#hero" class="nav-logo">AN.</a>
       <div class="nav-links">
         <a href="#work">Work</a>
+        <a href="#shorts">Shorts</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
       <a href="#contact" class="btn-nav">Let's Talk</a>
-      <button class="nav-burger" id="burger" aria-label="menu">
-        <span></span><span></span>
-      </button>
+      <button class="nav-burger" id="burger" aria-label="menu"><span></span><span></span></button>
     </div>
     <div class="nav-mobile" id="navMobile">
       <a href="#work" onclick="closeMobile()">Work</a>
+      <a href="#shorts" onclick="closeMobile()">Shorts</a>
       <a href="#about" onclick="closeMobile()">About</a>
       <a href="#contact" onclick="closeMobile()">Contact</a>
     </div>
@@ -45,15 +45,12 @@
         <span class="dot"></span>
         Available for Work · Delhi, India
       </div>
-      <h1 class="hero-name">
-        <span class="line">Anurag</span>
-        <span class="line line2">Nahrwal</span>
-      </h1>
-      <div class="hero-sub-row">
-        <div class="hero-badge">Video Editor</div>
-        <div class="hero-badge">Motion Graphics</div>
-        <div class="hero-badge">Cinematics</div>
-        <div class="hero-badge">Color Grading</div>
+      <div class="hero-name-wrap">
+        <h1 class="hero-name">
+          <span class="name-line name-first">Anurag</span>
+          <span class="name-line name-last">Nahrwal<span class="name-dot">.</span></span>
+        </h1>
+        <div class="hero-role-pill">Video Editor & Motion Designer</div>
       </div>
       <p class="hero-desc">
         I don't just cut videos — I craft experiences.<br />
@@ -64,26 +61,14 @@
         <a href="mailto:editoranurag135@gmail.com" class="btn-ghost">Get in Touch <span>→</span></a>
       </div>
       <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-n">1.5+</span>
-          <span class="stat-l">Years Experience</span>
-        </div>
+        <div class="stat"><span class="stat-n">1.5+</span><span class="stat-l">Years Experience</span></div>
         <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-n">20+</span>
-          <span class="stat-l">Projects Done</span>
-        </div>
+        <div class="stat"><span class="stat-n">20+</span><span class="stat-l">Projects Done</span></div>
         <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-n">100%</span>
-          <span class="stat-l">Satisfaction</span>
-        </div>
+        <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Satisfaction</span></div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
+    <div class="hero-scroll"><span>scroll</span><div class="scroll-line"></div></div>
   </section>
 
   <!-- MARQUEE -->
@@ -110,112 +95,169 @@
     </div>
   </div>
 
-  <!-- WORK -->
+  <!-- WORK — LONG FORM -->
   <section class="section work-section" id="work">
     <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Selected Work</span>
-        <h2>Edited, Cut & Shipped</h2>
-        <p>Long-form storytelling built for retention — structure, pacing, and emotion from first frame to last.</p>
+      <div class="section-head-row">
+        <div>
+          <span class="section-num">01</span>
+          <h2 class="section-title-big">LONG FORM</h2>
+        </div>
+        <span class="section-side-note">YouTube · Retention-First Editing</span>
       </div>
 
       <div class="work-grid">
-
         <div class="work-card work-card--big">
           <a href="https://www.youtube.com/watch?v=vcbz70ue1do" target="_blank">
-          <div class="work-thumb" style="background:#0a0a0a;">
-            <img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="Project 1" loading="lazy" />
-            <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="work-overlay">
-              <span class="work-year">YouTube</span>
-              <div class="work-tools"><span>Long Form</span><span>Edit</span></div>
+            <div class="work-thumb" style="background:#0a0a0a;">
+              <img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="Project 1" loading="lazy" />
+              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="work-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--gold">LONG FORM</span>
+                  <span class="wtag wtag--outline">YOUTUBE</span>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
-          <div class="work-info">
-            <h3>Long-Form Video #1</h3>
-            <p>Full-length storytelling with structured pacing and emotional beats.</p>
-            <span class="work-type">Long Form</span>
-          </div>
         </div>
 
         <div class="work-card">
           <a href="https://www.youtube.com/watch?v=MSkTpN4hTrk" target="_blank">
-          <div class="work-thumb" style="background:#0a0a0a;">
-            <img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Project 2" loading="lazy" />
-            <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="work-overlay">
-              <span class="work-year">YouTube</span>
-              <div class="work-tools"><span>Long Form</span></div>
+            <div class="work-thumb" style="background:#0a0a0a;">
+              <img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Project 2" loading="lazy" />
+              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="work-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--gold">LONG FORM</span>
+                  <span class="wtag wtag--outline">YOUTUBE</span>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
-          <div class="work-info">
-            <h3>Long-Form Video #2</h3>
-            <p>Deep-dive narrative built for maximum retention.</p>
-            <span class="work-type">Long Form</span>
-          </div>
         </div>
 
         <div class="work-card">
           <a href="https://www.youtube.com/watch?v=vWwq5s-8CgM" target="_blank">
-          <div class="work-thumb" style="background:#0a0a0a;">
-            <img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Project 3" loading="lazy" />
-            <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="work-overlay">
-              <span class="work-year">YouTube</span>
-              <div class="work-tools"><span>Motion</span></div>
+            <div class="work-thumb" style="background:#0a0a0a;">
+              <img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Project 3" loading="lazy" />
+              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="work-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--gold">LONG FORM</span>
+                  <span class="wtag wtag--outline">MOTION</span>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
-          <div class="work-info">
-            <h3>Long-Form Video #3</h3>
-            <p>Cinematic edit with motion graphics overlay.</p>
-            <span class="work-type">Motion</span>
-          </div>
         </div>
 
         <div class="work-card">
           <a href="https://www.youtube.com/watch?v=wlnwtU8MiHY" target="_blank">
-          <div class="work-thumb" style="background:#0a0a0a;">
-            <img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="Project 4" loading="lazy" />
-            <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="work-overlay">
-              <span class="work-year">YouTube</span>
-              <div class="work-tools"><span>Color Grade</span></div>
+            <div class="work-thumb" style="background:#0a0a0a;">
+              <img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="Project 4" loading="lazy" />
+              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="work-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--gold">LONG FORM</span>
+                  <span class="wtag wtag--outline">COLOR</span>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
-          <div class="work-info">
-            <h3>Long-Form Video #4</h3>
-            <p>Narrative content with custom color grade.</p>
-            <span class="work-type">Color</span>
-          </div>
         </div>
 
         <div class="work-card work-card--wide">
           <a href="https://www.youtube.com/watch?v=TqNjAQuygJA" target="_blank">
-          <div class="work-thumb" style="background:#0a0a0a;">
-            <img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Short Film" loading="lazy" />
-            <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            <div class="work-overlay">
-              <span class="work-year">🏆 Competition Winner</span>
-              <div class="work-tools"><span>Short Film</span><span>1st Place</span></div>
+            <div class="work-thumb" style="background:#0a0a0a;">
+              <img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Short Film" loading="lazy" />
+              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="work-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--gold">SHORT FILM</span>
+                  <span class="wtag wtag--win">🏆 1ST PLACE</span>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
-          <div class="work-info">
-            <h3>Short Film — Competition Winner</h3>
-            <p>Edited short films that won 1st place at multiple competitions. Full production pipeline — directed, shot, and edited.</p>
-            <span class="work-type">Film</span>
-          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SHORTS SECTION -->
+  <section class="section shorts-section" id="shorts">
+    <div class="container">
+      <div class="section-head-row">
+        <div>
+          <span class="section-num">02</span>
+          <h2 class="section-title-big">SHORT FORM</h2>
+        </div>
+        <span class="section-side-note">YouTube Shorts · Scroll Stoppers</span>
       </div>
 
-      <div class="work-cta">
-        <p>Have a project in mind?</p>
-        <a href="#contact" class="btn-primary">Start a Project →</a>
+      <div class="shorts-grid">
+
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/Gx2jK5KUpFA" target="_blank">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/Gx2jK5KUpFA/hqdefault.jpg" alt="Short 1" loading="lazy" />
+              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="short-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--red">SHORT FORM</span>
+                  <span class="wtag wtag--outline">YT SHORT</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/AeeR0h84RUo" target="_blank">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/AeeR0h84RUo/hqdefault.jpg" alt="Short 2" loading="lazy" />
+              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="short-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--red">SHORT FORM</span>
+                  <span class="wtag wtag--outline">YT SHORT</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/bsbBsJ6ipB0" target="_blank">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/bsbBsJ6ipB0/hqdefault.jpg" alt="Short 3" loading="lazy" />
+              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="short-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--red">SHORT FORM</span>
+                  <span class="wtag wtag--outline">YT SHORT</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="short-card">
+          <a href="https://youtube.com/shorts/5faxWT5eIHk" target="_blank">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/5faxWT5eIHk/hqdefault.jpg" alt="Short 4" loading="lazy" />
+              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="short-overlay">
+                <div class="work-tag-row">
+                  <span class="wtag wtag--red">SHORT FORM</span>
+                  <span class="wtag wtag--outline">YT SHORT</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -225,24 +267,15 @@
     <div class="container about-inner">
       <div class="about-left">
         <span class="section-tag">About Me</span>
-        <h2>I make people feel it.</h2>
-        <div class="about-blocks">
-          <div class="about-block">
-            <h4>What I do</h4>
-            <p>Video editing, motion graphics, and color grading. Long-form YouTube videos, short-form reels, brand content, and short films — every frame earns its place.</p>
-          </div>
-          <div class="about-block">
-            <h4>Background</h4>
-            <p>Mechanical engineering student at DTU, Delhi — but my real passion lives in the edit suite. My engineering background gives me a structured approach: I think about pacing, retention, and psychology. Why do viewers drop off? What makes them rewatch?</p>
-          </div>
-          <div class="about-block">
-            <h4>Achievements</h4>
-            <p>Edited several short films that won 1st place at multiple competitions — bringing the same storytelling instincts I use for YouTube to narrative cinema.</p>
-          </div>
-          <div class="about-block">
-            <h4>My approach</h4>
-            <p>Whether it's a 30-second reel that stops the scroll or a 20-minute deep-dive that holds attention — every cut is a decision. Good editing is invisible. Great editing is unforgettable.</p>
-          </div>
+        <h2 class="about-headline">I make people<br/><em>feel it.</em></h2>
+        <div class="about-prose">
+          <p>I'm Anurag — a <strong>video editor and motion designer</strong> based in Delhi. 1.5+ years of turning raw footage into content that actually performs.</p>
+          <p>My engineering background gives me a structured approach to every edit — I think about <strong>pacing, retention, and psychology</strong>. Why do viewers drop off? What makes them rewatch? I build edits around those answers.</p>
+          <p>Whether it's a 30-second reel that stops the scroll or a 20-minute deep-dive that holds attention, <strong>every frame earns its place</strong>.</p>
+        </div>
+        <div class="about-trophy-note">
+          <span class="trophy-icon">🏆</span>
+          <p>I've also edited <strong>several short films</strong> that went on to win <strong>1st place at multiple competitions</strong> — bringing the same storytelling instincts I use for YouTube to narrative cinema.</p>
         </div>
       </div>
       <div class="about-right">
@@ -254,26 +287,11 @@
           </div>
         </div>
         <div class="about-skills">
-          <div class="skill-row">
-            <span class="skill-name">DaVinci Resolve</span>
-            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Premiere Pro</span>
-            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">After Effects</span>
-            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Color Grading</span>
-            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Motion Graphics</span>
-            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-          </div>
+          <div class="skill-row"><span class="skill-name">DaVinci Resolve</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Premiere Pro</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">After Effects</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Color Grading</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Motion Graphics</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
         </div>
       </div>
     </div>
@@ -290,14 +308,8 @@
       <div class="contact-body">
         <form class="contact-form" id="contactForm">
           <div class="form-row">
-            <div class="form-group">
-              <label>Your Name</label>
-              <input type="text" placeholder="John Doe" required />
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="john@email.com" required />
-            </div>
+            <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Doe" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="john@email.com" required /></div>
           </div>
           <div class="form-group">
             <label>Project Type</label>
@@ -312,32 +324,15 @@
               <option>Other</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" placeholder="Tell me about your project..."></textarea>
-          </div>
+          <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell me about your project..."></textarea></div>
           <button type="submit" class="btn-primary btn-full">Send Message →</button>
         </form>
         <div class="contact-info">
-          <div class="contact-item">
-            <span class="ci-label">Email</span>
-            <a href="mailto:editoranurag135@gmail.com" class="ci-val">editoranurag135@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="ci-label">Instagram</span>
-            <a href="https://www.instagram.com/anurag.visuals/" target="_blank" class="ci-val">@anurag.visuals</a>
-          </div>
-          <div class="contact-item">
-            <span class="ci-label">YouTube</span>
-            <a href="https://www.youtube.com/@Anurag_Nahrwal" target="_blank" class="ci-val">@Anurag_Nahrwal</a>
-          </div>
-          <div class="contact-item">
-            <span class="ci-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/anurag-nahrwal/" target="_blank" class="ci-val">anurag-nahrwal</a>
-          </div>
-          <div class="contact-quote">
-            "Every frame earns its place.<br/>Every cut is a decision."
-          </div>
+          <div class="contact-item"><span class="ci-label">Email</span><a href="mailto:editoranurag135@gmail.com" class="ci-val">editoranurag135@gmail.com</a></div>
+          <div class="contact-item"><span class="ci-label">Instagram</span><a href="https://www.instagram.com/anurag.visuals/" target="_blank" class="ci-val">@anurag.visuals</a></div>
+          <div class="contact-item"><span class="ci-label">YouTube</span><a href="https://www.youtube.com/@Anurag_Nahrwal" target="_blank" class="ci-val">@Anurag_Nahrwal</a></div>
+          <div class="contact-item"><span class="ci-label">LinkedIn</span><a href="https://www.linkedin.com/in/anurag-nahrwal/" target="_blank" class="ci-val">anurag-nahrwal</a></div>
+          <div class="contact-quote">"Every frame earns its place.<br/>Every cut is a decision."</div>
         </div>
       </div>
     </div>
@@ -350,6 +345,7 @@
       <span class="footer-copy">© 2025 — Video Editor & Motion Designer · Delhi</span>
       <div class="footer-links">
         <a href="#work">Work</a>
+        <a href="#shorts">Shorts</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
