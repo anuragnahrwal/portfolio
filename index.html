@@ -7,18 +7,28 @@
   <meta name="description" content="Video editor and motion designer based in Delhi." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-player">
+        <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">AN.</a>
       <div class="nav-links">
-        <a href="#work">Work</a>
         <a href="#shorts">Shorts</a>
+        <a href="#work">Long Form</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -26,8 +36,8 @@
       <button class="nav-burger" id="burger" aria-label="menu"><span></span><span></span></button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="#work" onclick="closeMobile()">Work</a>
       <a href="#shorts" onclick="closeMobile()">Shorts</a>
+      <a href="#work" onclick="closeMobile()">Long Form</a>
       <a href="#about" onclick="closeMobile()">About</a>
       <a href="#contact" onclick="closeMobile()">Contact</a>
     </div>
@@ -43,14 +53,17 @@
     <div class="container hero-inner">
       <div class="hero-tag">
         <span class="dot"></span>
-        Available for Work · Delhi, India
+        AVAILABLE FOR PROJECTS
       </div>
-      <div class="hero-name-wrap">
-        <h1 class="hero-name">
-          <span class="name-line name-first">Anurag</span>
-          <span class="name-line name-last">Nahrwal<span class="name-dot">.</span></span>
-        </h1>
-        <div class="hero-role-pill">Video Editor & Motion Designer</div>
+      <h1 class="hero-name">
+        <span class="name-first">Anurag</span>
+        <span class="name-last">Nahrwal<span class="name-dot">.</span></span>
+      </h1>
+      <div class="hero-sub-row">
+        <div class="hero-badge">VIDEO EDITOR</div>
+        <div class="hero-badge">MOTION GRAPHICS</div>
+        <div class="hero-badge">CINEMATICS</div>
+        <div class="hero-badge">COLOR GRADING</div>
       </div>
       <p class="hero-desc">
         I don't just cut videos — I craft experiences.<br />
@@ -95,170 +108,93 @@
     </div>
   </div>
 
-  <!-- WORK — LONG FORM -->
-  <section class="section work-section" id="work">
+  <!-- SHORTS — FIRST -->
+  <section class="section shorts-section" id="shorts">
     <div class="container">
       <div class="section-head-row">
         <div>
           <span class="section-num">01</span>
-          <h2 class="section-title-big">LONG FORM</h2>
+          <h2 class="section-title-big">SHORT FORM</h2>
         </div>
-        <span class="section-side-note">YouTube · Retention-First Editing</span>
+        <span class="section-side-note">YouTube Shorts · Scroll Stoppers</span>
       </div>
-
-      <div class="work-grid">
-        <div class="work-card work-card--big">
-          <a href="https://www.youtube.com/watch?v=vcbz70ue1do" target="_blank">
-            <div class="work-thumb" style="background:#0a0a0a;">
-              <img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="Project 1" loading="lazy" />
-              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="work-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--gold">LONG FORM</span>
-                  <span class="wtag wtag--outline">YOUTUBE</span>
-                </div>
-              </div>
-            </div>
-          </a>
+      <div class="shorts-grid">
+        <div class="short-card" data-video="Gx2jK5KUpFA" data-type="shorts">
+          <div class="short-thumb">
+            <img src="https://i.ytimg.com/vi/Gx2jK5KUpFA/hqdefault.jpg" alt="Short 1" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="work-card">
-          <a href="https://www.youtube.com/watch?v=MSkTpN4hTrk" target="_blank">
-            <div class="work-thumb" style="background:#0a0a0a;">
-              <img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="Project 2" loading="lazy" />
-              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="work-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--gold">LONG FORM</span>
-                  <span class="wtag wtag--outline">YOUTUBE</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="short-card" data-video="AeeR0h84RUo" data-type="shorts">
+          <div class="short-thumb">
+            <img src="https://i.ytimg.com/vi/AeeR0h84RUo/hqdefault.jpg" alt="Short 2" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="work-card">
-          <a href="https://www.youtube.com/watch?v=vWwq5s-8CgM" target="_blank">
-            <div class="work-thumb" style="background:#0a0a0a;">
-              <img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="Project 3" loading="lazy" />
-              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="work-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--gold">LONG FORM</span>
-                  <span class="wtag wtag--outline">MOTION</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="short-card" data-video="bsbBsJ6ipB0" data-type="shorts">
+          <div class="short-thumb">
+            <img src="https://i.ytimg.com/vi/bsbBsJ6ipB0/hqdefault.jpg" alt="Short 3" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="work-card">
-          <a href="https://www.youtube.com/watch?v=wlnwtU8MiHY" target="_blank">
-            <div class="work-thumb" style="background:#0a0a0a;">
-              <img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="Project 4" loading="lazy" />
-              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="work-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--gold">LONG FORM</span>
-                  <span class="wtag wtag--outline">COLOR</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="work-card work-card--wide">
-          <a href="https://www.youtube.com/watch?v=TqNjAQuygJA" target="_blank">
-            <div class="work-thumb" style="background:#0a0a0a;">
-              <img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Short Film" loading="lazy" />
-              <div class="work-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="work-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--gold">SHORT FILM</span>
-                  <span class="wtag wtag--win">🏆 1ST PLACE</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="short-card" data-video="5faxWT5eIHk" data-type="shorts">
+          <div class="short-thumb">
+            <img src="https://i.ytimg.com/vi/5faxWT5eIHk/hqdefault.jpg" alt="Short 4" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SHORTS SECTION -->
-  <section class="section shorts-section" id="shorts">
+  <!-- LONG FORM — SECOND -->
+  <section class="section work-section" id="work">
     <div class="container">
       <div class="section-head-row">
         <div>
           <span class="section-num">02</span>
-          <h2 class="section-title-big">SHORT FORM</h2>
+          <h2 class="section-title-big">LONG FORM</h2>
         </div>
-        <span class="section-side-note">YouTube Shorts · Scroll Stoppers</span>
+        <span class="section-side-note">YouTube · Retention-First Editing</span>
       </div>
 
-      <div class="shorts-grid">
-
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/Gx2jK5KUpFA" target="_blank">
-            <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/Gx2jK5KUpFA/hqdefault.jpg" alt="Short 1" loading="lazy" />
-              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="short-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--red">SHORT FORM</span>
-                  <span class="wtag wtag--outline">YT SHORT</span>
-                </div>
-              </div>
-            </div>
-          </a>
+      <!-- ROW of 4 -->
+      <div class="longform-row">
+        <div class="lf-card" data-video="vcbz70ue1do" data-type="watch">
+          <div class="lf-thumb">
+            <img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="LF 1" loading="lazy" />
+            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/AeeR0h84RUo" target="_blank">
-            <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/AeeR0h84RUo/hqdefault.jpg" alt="Short 2" loading="lazy" />
-              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="short-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--red">SHORT FORM</span>
-                  <span class="wtag wtag--outline">YT SHORT</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="lf-card" data-video="MSkTpN4hTrk" data-type="watch">
+          <div class="lf-thumb">
+            <img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="LF 2" loading="lazy" />
+            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/bsbBsJ6ipB0" target="_blank">
-            <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/bsbBsJ6ipB0/hqdefault.jpg" alt="Short 3" loading="lazy" />
-              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="short-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--red">SHORT FORM</span>
-                  <span class="wtag wtag--outline">YT SHORT</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="lf-card" data-video="vWwq5s-8CgM" data-type="watch">
+          <div class="lf-thumb">
+            <img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="LF 3" loading="lazy" />
+            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
-        <div class="short-card">
-          <a href="https://youtube.com/shorts/5faxWT5eIHk" target="_blank">
-            <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/5faxWT5eIHk/hqdefault.jpg" alt="Short 4" loading="lazy" />
-              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-              <div class="short-overlay">
-                <div class="work-tag-row">
-                  <span class="wtag wtag--red">SHORT FORM</span>
-                  <span class="wtag wtag--outline">YT SHORT</span>
-                </div>
-              </div>
-            </div>
-          </a>
+        <div class="lf-card" data-video="wlnwtU8MiHY" data-type="watch">
+          <div class="lf-thumb">
+            <img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="LF 4" loading="lazy" />
+            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
         </div>
-
       </div>
+
+      <!-- WIDE FILM CARD -->
+      <div class="lf-wide-card" data-video="TqNjAQuygJA" data-type="watch">
+        <div class="lf-wide-thumb">
+          <img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="Short Film" loading="lazy" />
+          <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="lf-wide-badge">🏆 SHORT FILM — COMPETITION WINNER · 1ST PLACE</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -281,10 +217,7 @@
       <div class="about-right">
         <div class="about-photo-wrap">
           <img src="https://framerusercontent.com/images/PhpYj9LTlg4IAd93DTUmlSVKda8.png" alt="Anurag Nahrwal" class="about-photo-img" />
-          <div class="about-photo-tag">
-            <span class="dot dot--green"></span>
-            Open to freelance
-          </div>
+          <div class="about-photo-tag"><span class="dot dot--green"></span>Open to freelance</div>
         </div>
         <div class="about-skills">
           <div class="skill-row"><span class="skill-name">DaVinci Resolve</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
@@ -344,8 +277,8 @@
       <span class="footer-logo">Anurag Nahrwal.</span>
       <span class="footer-copy">© 2025 — Video Editor & Motion Designer · Delhi</span>
       <div class="footer-links">
-        <a href="#work">Work</a>
         <a href="#shorts">Shorts</a>
+        <a href="#work">Long Form</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
