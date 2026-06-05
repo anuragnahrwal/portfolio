@@ -52,7 +52,7 @@ document.querySelectorAll('.lf-card, .lf-wide-card').forEach(card => {
 });
 
 // Scroll reveal
-const reveals = document.querySelectorAll('.section-head-row, .short-card, .lf-card, .lf-wide-card, .about-left, .about-right, .contact-form, .contact-info');
+const reveals = document.querySelectorAll('.section-head-row, .short-card, .insta-card, .lf-card, .lf-wide-card, .about-left, .about-right, .contact-form, .contact-info');
 reveals.forEach(el => el.classList.add('reveal'));
 const ro = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
