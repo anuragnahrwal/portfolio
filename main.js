@@ -21,11 +21,15 @@ function openModal(videoId, type) {
   if (type === 'shorts') {
     src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     player.classList.add('shorts-mode');
+  } else if (type === 'drive') {
+    src = `https://drive.google.com/file/d/${videoId}/preview`;
+    player.classList.add('shorts-mode');
   } else {
     src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     player.classList.remove('shorts-mode');
   }
   iframe.src = src;
+  iframe.setAttribute('allow', 'autoplay; fullscreen');
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -43,7 +47,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal
 
 // Attach to short cards
 document.querySelectorAll('.short-card').forEach(card => {
-  card.addEventListener('click', () => openModal(card.dataset.video, 'shorts'));
+  card.addEventListener('click', () => openModal(card.dataset.video, card.dataset.type || 'shorts'));
 });
 
 // Attach to long form cards
