@@ -17,19 +17,12 @@ const closeBtn = document.getElementById('modalClose');
 const player  = overlay.querySelector('.modal-player');
 
 function openModal(videoId, type) {
-  let src;
   if (type === 'shorts') {
-    src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    player.classList.add('shorts-mode');
-  } else if (type === 'drive') {
-    src = `https://drive.google.com/file/d/${videoId}/preview`;
     player.classList.add('shorts-mode');
   } else {
-    src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     player.classList.remove('shorts-mode');
   }
-  iframe.src = src;
-  iframe.setAttribute('allow', 'autoplay; fullscreen');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -45,21 +38,21 @@ closeBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-// Attach to short cards
-document.querySelectorAll('.short-card').forEach(card => {
-  card.addEventListener('click', () => openModal(card.dataset.video, card.dataset.type || 'shorts'));
+// Short cards — only YT ones (not insta-card)
+document.querySelectorAll('.short-card:not(.insta-card)').forEach(card => {
+  card.addEventListener('click', () => openModal(card.dataset.video, 'shorts'));
 });
 
-// Attach to long form cards
-document.querySelectorAll('.lf-card, .lf-wide-card').forEach(card => {
+// Long form cards
+document.querySelectorAll('.lf-card').forEach(card => {
   card.addEventListener('click', () => openModal(card.dataset.video, 'watch'));
 });
 
 // Scroll reveal
-const reveals = document.querySelectorAll('.section-head-row, .short-card, .insta-card, .lf-card, .lf-wide-card, .about-left, .about-right, .contact-form, .contact-info');
+const reveals = document.querySelectorAll('.section-head-row, .short-card, .lf-card, .about-left, .about-right, .contact-info');
 reveals.forEach(el => el.classList.add('reveal'));
 const ro = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+  entries.forEach((e) => {
     if (e.isIntersecting) {
       setTimeout(() => e.target.classList.add('visible'), 60);
       ro.unobserve(e.target);
@@ -74,16 +67,3 @@ const so = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animated'); so.unobserve(e.target); } });
 }, { threshold: 0.5 });
 skillFills.forEach(el => so.observe(el));
-
-// Contact form
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Message sent! ✓';
-    btn.style.background = '#4ade80';
-    btn.style.color = '#0a1a0a';
-    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.color = ''; form.reset(); }, 3000);
-  });
-}

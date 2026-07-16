@@ -27,7 +27,7 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">AN.</a>
       <div class="nav-links">
-        <a href="#shorts">Shorts</a>
+        <a href="#shorts">Short Form</a>
         <a href="#work">Long Form</a>
         <a href="#about">About</a>
       </div>
@@ -35,7 +35,7 @@
       <button class="nav-burger" id="burger" aria-label="menu"><span></span><span></span></button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="#shorts" onclick="closeMobile()">Shorts</a>
+      <a href="#shorts" onclick="closeMobile()">Short Form</a>
       <a href="#work" onclick="closeMobile()">Long Form</a>
       <a href="#about" onclick="closeMobile()">About</a>
     </div>
@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <!-- SHORTS — FIRST -->
+  <!-- SHORT FORM — ALL IN ONE SECTION -->
   <section class="section shorts-section" id="shorts">
     <div class="container">
       <div class="section-head-row">
@@ -107,9 +107,12 @@
           <span class="section-num">01</span>
           <h2 class="section-title-big">SHORT FORM</h2>
         </div>
-        <span class="section-side-note">YouTube Shorts · Scroll Stoppers</span>
+        <span class="section-side-note">YouTube Shorts · Instagram Reels · Scroll Stoppers</span>
       </div>
-      <div class="shorts-grid">
+
+      <!-- ROW 1 — YT Shorts, 2 cards -->
+      <div class="shorts-row-label"><span class="platform-tag platform-yt">YouTube Shorts</span></div>
+      <div class="shorts-grid-2">
         <div class="short-card" data-video="Gx2jK5KUpFA" data-type="shorts">
           <div class="short-thumb">
             <img src="https://i.ytimg.com/vi/Gx2jK5KUpFA/hqdefault.jpg" alt="Short 1" loading="lazy" />
@@ -122,6 +125,10 @@
             <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
         </div>
+      </div>
+
+      <!-- ROW 2 — YT Shorts, 2 cards -->
+      <div class="shorts-grid-2" style="margin-top:0;">
         <div class="short-card" data-video="bsbBsJ6ipB0" data-type="shorts">
           <div class="short-thumb">
             <img src="https://i.ytimg.com/vi/bsbBsJ6ipB0/hqdefault.jpg" alt="Short 3" loading="lazy" />
@@ -136,58 +143,41 @@
         </div>
       </div>
 
-      <!-- MORE SHORTS SUB-SECTION -->
-      <div class="insta-reels-sub">
-        <span class="insta-reels-label">More Shorts</span>
-        <p class="insta-reels-heading">Extra cut — <em>straight from the drive.</em></p>
-        <div class="shorts-grid">
-          <div class="short-card" data-video="MKlmDHpiB5Q" data-type="shorts">
-            <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/MKlmDHpiB5Q/hqdefault.jpg" alt="Short 5" loading="lazy" />
-              <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-            </div>
-          </div>
-        </div>
+      <!-- INSTAGRAM REELS DIVIDER -->
+      <div class="insta-divider">
+        <span class="platform-tag platform-insta">Instagram Reels</span>
+        <p class="insta-context-line">Shot, directed &amp; edited — I was there from setup to export.</p>
       </div>
 
-      <!-- INSTAGRAM REELS SUB-SECTION -->
-      <div class="insta-reels-sub">
-        <span class="insta-reels-label">Instagram Reels</span>
-        <p class="insta-reels-heading">I was there — <em>on set, on shoot, and on edit.</em></p>
-        <div class="insta-grid">
-          <a class="insta-card" href="https://www.instagram.com/p/DZPUFiix3RU/" target="_blank" rel="noopener">
-            <div class="insta-thumb">
-              <img src="assets/insta_reel_1.png" alt="Instagram Reel 1" loading="lazy" />
-              <div class="insta-play">▶</div>
-              <span class="insta-badge">Instagram</span>
-            </div>
-          </a>
-          <a class="insta-card" href="https://www.instagram.com/p/DZIY5QwzQNT/" target="_blank" rel="noopener">
-            <div class="insta-thumb">
-              <img src="assets/insta_reel_2.png" alt="Instagram Reel 2" loading="lazy" />
-              <div class="insta-play">▶</div>
-              <span class="insta-badge">Instagram</span>
-            </div>
-          </a>
-          <a class="insta-card" href="https://www.instagram.com/p/DZIViBOJsuX/" target="_blank" rel="noopener">
-            <div class="insta-thumb">
-              <img src="assets/insta_reel_3.png" alt="Instagram Reel 3" loading="lazy" />
-              <div class="insta-play">▶</div>
-              <span class="insta-badge">Instagram</span>
-            </div>
-          </a>
-          <a class="insta-card" href="https://www.instagram.com/p/DZPbIN0MXxo/" target="_blank" rel="noopener">
-            <div class="insta-thumb">
-              <img src="assets/insta_reel_4.png" alt="Instagram Reel 4" loading="lazy" />
-              <div class="insta-play">▶</div>
-              <span class="insta-badge">Instagram</span>
-            </div>
-          </a>
-        </div>
+      <!-- ROW 3 — Insta Reels, 3 cards (with thumbnails) -->
+      <div class="shorts-grid-3">
+        <a class="short-card insta-card" href="https://www.instagram.com/reel/DanRox1ObdL/" target="_blank" rel="noopener">
+          <div class="short-thumb">
+            <img src="assets/insta reel 1.png" alt="Instagram Reel 1" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="card-platform-badge">Instagram</span>
+          </div>
+        </a>
+        <a class="short-card insta-card" href="https://www.instagram.com/reel/DasUR5UNBbw/" target="_blank" rel="noopener">
+          <div class="short-thumb">
+            <img src="assets/insta reel 2.png" alt="Instagram Reel 2" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="card-platform-badge">Instagram</span>
+          </div>
+        </a>
+        <a class="short-card insta-card" href="https://www.instagram.com/reel/DavDwzZOtQ6/" target="_blank" rel="noopener">
+          <div class="short-thumb">
+            <img src="assets/insta reel 3.png" alt="Instagram Reel 3" loading="lazy" />
+            <div class="short-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span class="card-platform-badge">Instagram</span>
+          </div>
+        </a>
       </div>
 
     </div>
   </section>
+
+  <!-- LONG FORM -->
   <section class="section work-section" id="work">
     <div class="container">
       <div class="section-head-row">
@@ -198,46 +188,65 @@
         <span class="section-side-note">YouTube · Retention-First Editing</span>
       </div>
 
-      <!-- 3x2 GRID -->
-      <div class="longform-row">
-        <div class="lf-card" data-video="vcbz70ue1do" data-type="watch">
+      <!-- 2-per-row grid, 5 videos, with description tooltip -->
+      <div class="longform-row lf-2col">
+
+        <div class="lf-card" data-video="vcbz70ue1do" data-type="watch" data-title="Desert Vibes" data-desc="Cinematic travel edit — pacing and color to match the mood of the landscape.">
           <div class="lf-thumb">
             <img src="https://i.ytimg.com/vi/vcbz70ue1do/sddefault.jpg" alt="LF 1" loading="lazy" />
             <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
+          <div class="lf-desc-pop">
+            <span class="lf-desc-title">Desert Vibes</span>
+            <span class="lf-desc-text">Cinematic travel edit — pacing and color to match the mood of the landscape.</span>
+          </div>
         </div>
-        <div class="lf-card" data-video="MSkTpN4hTrk" data-type="watch">
+
+        <div class="lf-card" data-video="MSkTpN4hTrk" data-type="watch" data-title="Boxing Ki Politics" data-desc="Sports documentary edit — fast cuts, motion graphics, retention-optimised structure.">
           <div class="lf-thumb">
             <img src="https://i.ytimg.com/vi/MSkTpN4hTrk/sddefault.jpg" alt="LF 2" loading="lazy" />
             <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
+          <div class="lf-desc-pop">
+            <span class="lf-desc-title">Boxing Ki Politics</span>
+            <span class="lf-desc-text">Sports documentary edit — fast cuts, motion graphics, retention-optimised structure.</span>
+          </div>
         </div>
-        <div class="lf-card" data-video="vWwq5s-8CgM" data-type="watch">
+
+        <div class="lf-card" data-video="vWwq5s-8CgM" data-type="watch" data-title="Aao Na" data-desc="Short film edit — narrative pacing, colour grade, and emotional arc from raw footage.">
           <div class="lf-thumb">
             <img src="https://i.ytimg.com/vi/vWwq5s-8CgM/sddefault.jpg" alt="LF 3" loading="lazy" />
             <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
-        </div>
-        <div class="lf-card" data-video="wlnwtU8MiHY" data-type="watch">
-          <div class="lf-thumb">
-            <img src="https://i.ytimg.com/vi/wlnwtU8MiHY/sddefault.jpg" alt="LF 4" loading="lazy" />
-            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="lf-desc-pop">
+            <span class="lf-desc-title">Aao Na</span>
+            <span class="lf-desc-text">Short film edit — narrative pacing, colour grade, and emotional arc from raw footage.</span>
           </div>
         </div>
-        <div class="lf-card" data-video="TqNjAQuygJA" data-type="watch">
+
+        <div class="lf-card" data-video="c1OyB0kq-MI" data-type="watch" data-title="Hera Pheri Tribute" data-desc="Fan edit — recreating iconic Bollywood energy with modern motion design and sound sync.">
+          <div class="lf-thumb">
+            <img src="https://i.ytimg.com/vi/c1OyB0kq-MI/sddefault.jpg" alt="LF 4" loading="lazy" />
+            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="lf-desc-pop">
+            <span class="lf-desc-title">Hera Pheri Tribute</span>
+            <span class="lf-desc-text">Fan edit — recreating iconic Bollywood energy with modern motion design and sound sync.</span>
+          </div>
+        </div>
+
+        <div class="lf-card lf-card--solo" data-video="TqNjAQuygJA" data-type="watch" data-title="Theher Ja" data-desc="Music-driven narrative edit — emotion through rhythm, colour, and silence.">
           <div class="lf-thumb">
             <img src="https://i.ytimg.com/vi/TqNjAQuygJA/sddefault.jpg" alt="LF 5" loading="lazy" />
             <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
-        </div>
-        <div class="lf-card" data-video="c1OyB0kq-MI" data-type="watch">
-          <div class="lf-thumb">
-            <img src="https://i.ytimg.com/vi/c1OyB0kq-MI/sddefault.jpg" alt="LF 6" loading="lazy" />
-            <div class="lf-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="lf-desc-pop">
+            <span class="lf-desc-title">Theher Ja</span>
+            <span class="lf-desc-text">Music-driven narrative edit — emotion through rhythm, colour, and silence.</span>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -282,7 +291,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT — info only, no form -->
   <section class="section contact-section" id="contact">
     <div class="container contact-inner">
       <div class="contact-head">
@@ -290,33 +299,16 @@
         <h2>Ready to make something great?</h2>
         <p>Your perfect video is one message away. Let's build something your audience won't forget.</p>
       </div>
-      <div class="contact-body">
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group"><label>Your Name</label><input type="text" placeholder="John Doe" required /></div>
-            <div class="form-group"><label>Email</label><input type="email" placeholder="john@email.com" required /></div>
-          </div>
-          <div class="form-group">
-            <label>Project Type</label>
-            <select>
-              <option value="">Select type...</option>
-              <option>Long-Form YouTube Video</option>
-              <option>Short-Form Reels / Shorts</option>
-              <option>Brand / Promotional Content</option>
-              <option>Short Film / Narrative</option>
-              <option>Motion Graphics</option>
-              <option>Color Grading</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell me about your project..."></textarea></div>
-          <button type="submit" class="btn-primary btn-full">Send Message →</button>
-        </form>
-        <div class="contact-info">
+      <div class="contact-body contact-body--noform">
+        <div class="contact-info contact-info--centered">
           <div class="contact-item"><span class="ci-label">Email</span><a href="mailto:editoranurag135@gmail.com" class="ci-val">editoranurag135@gmail.com</a></div>
           <div class="contact-item"><span class="ci-label">Instagram</span><a href="https://www.instagram.com/anurag.visuals/" target="_blank" class="ci-val">@anurag.visuals</a></div>
           <div class="contact-item"><span class="ci-label">YouTube</span><a href="https://www.youtube.com/@Anurag_Nahrwal" target="_blank" class="ci-val">@Anurag_Nahrwal</a></div>
           <div class="contact-item"><span class="ci-label">LinkedIn</span><a href="https://www.linkedin.com/in/anurag-nahrwal/" target="_blank" class="ci-val">anurag-nahrwal</a></div>
+          <div class="contact-cta-row">
+            <a href="mailto:editoranurag135@gmail.com" class="btn-primary">Email Me →</a>
+            <a href="https://www.instagram.com/anurag.visuals/" target="_blank" class="btn-secondary">DM on Instagram →</a>
+          </div>
           <div class="contact-quote">"Every frame earns its place.<br/>Every cut is a decision."</div>
         </div>
       </div>
@@ -329,7 +321,7 @@
       <span class="footer-logo">Anurag Nahrwal.</span>
       <span class="footer-copy">© 2025 — Video Editor & Motion Designer · Delhi</span>
       <div class="footer-links">
-        <a href="#shorts">Shorts</a>
+        <a href="#shorts">Short Form</a>
         <a href="#work">Long Form</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
